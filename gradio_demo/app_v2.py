@@ -115,7 +115,7 @@ def generate_image(
         raise gr.Error(f"Cannot use multiple trigger words '{pipe.trigger_word}' in text prompt!")
 
     # determine output dimensions by the aspect ratio
-    output_w, output_h = aspect_ratios[aspect_ratio_name]
+    output_w, output_h = 512, 512
     print(f"[Debug] Generate image using aspect ratio [{aspect_ratio_name}] => {output_w} x {output_h}")
 
     # apply the style template
