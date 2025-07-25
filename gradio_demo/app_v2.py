@@ -167,6 +167,8 @@ def generate_image(
         adapter_conditioning_scale=adapter_conditioning_scale,
         adapter_conditioning_factor=adapter_conditioning_factor,
     ).images
+    torch.cuda.empty_cache()
+    gc.collect()
     return images, gr.update(visible=True)
 
 def swap_to_gallery(images):
